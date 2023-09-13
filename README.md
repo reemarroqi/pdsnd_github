@@ -8,3 +8,7 @@ Udacity Github Project
 
 ### Description
 The purpose of this project is to make sure students can use git & github properly.
+
+
+*Done by: Reem Alarrouqi*
+
