@@ -1,7 +1,9 @@
 import time
 import pandas as pd
+from tabulate import tabulate
 # import numpy as np
 
+pd.set_option("display.max_columns", 200)
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
@@ -150,6 +152,7 @@ def user_stats(df):
 
 
 def main():
+    pd.set_option("display.max_columns", 200)
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
