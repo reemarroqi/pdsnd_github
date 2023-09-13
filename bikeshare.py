@@ -1,7 +1,9 @@
 import time
 import pandas as pd
+from tabulate import tabulate
 # import numpy as np
 
+pd.set_option("display.max_columns", 200)
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
@@ -55,7 +57,7 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     df = pd.read_csv(CITY_DATA[city])
-    df.name = city
+    df.attrs['name'] = city
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.day_name()
@@ -151,6 +153,7 @@ def user_stats(df):
 
 def main():
     # This loop keeps iterating as long as the user's input is yes. Otherwise, it stops.
+
 
     while True:
         city, month, day = get_filters()
