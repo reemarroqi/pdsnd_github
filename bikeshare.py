@@ -150,6 +150,8 @@ def user_stats(df):
 
 
 def main():
+    # This loop keeps iterating as long as the user's input is yes. Otherwise, it stops.
+
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
